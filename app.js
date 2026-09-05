@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvas();
   initTypingEffect();
   initSkillsFilter();
+  initProjectFilter();
   initProjectModals();
   initResumeModal();
   initContactUtils();
@@ -21,6 +22,7 @@ function initNavbar() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   const navItems = document.querySelectorAll('.nav-link');
+  const backdrop = document.getElementById('mobile-nav-backdrop');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -48,17 +50,70 @@ function initNavbar() {
     });
   });
 
+  window.closeMobileNav = function() {
+    if (!navLinks) return;
+    navLinks.classList.remove('open');
+    if (menuToggle) {
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  };
+
+  window.openMobileNav = function() {
+    if (!navLinks) return;
+    navLinks.classList.add('open');
+    if (menuToggle) {
+      menuToggle.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+    if (backdrop) backdrop.classList.add('active');
+    document.body.classList.add('nav-open');
+  };
+
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (navLinks.classList.contains('open')) {
+        window.closeMobileNav();
+      } else {
+        window.openMobileNav();
+      }
     });
 
     // Close mobile menu on link click
     navItems.forEach(item => {
       item.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+        window.closeMobileNav();
       });
+    });
+
+    // Close when clicking mobile contact button
+    const mobileContactBtn = document.querySelector('.mobile-contact-btn');
+    if (mobileContactBtn) {
+      mobileContactBtn.addEventListener('click', () => {
+        window.closeMobileNav();
+      });
+    }
+
+    // Close on backdrop tap
+    if (backdrop) {
+      backdrop.addEventListener('click', window.closeMobileNav);
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        window.closeMobileNav();
+      }
+    });
+
+    // Close on window resize if crossing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+        window.closeMobileNav();
+      }
     });
   }
 }
@@ -261,9 +316,66 @@ function initSkillsFilter() {
 }
 
 /* ==========================================================================
+   PROJECTS CATEGORY FILTER
+   ========================================================================== */
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const projectCards = document.querySelectorAll('.projects-grid .project-card');
+
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category') || '';
+        if (filter === 'all' || category.includes(filter)) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
    PROJECT DEEP-DIVE MODALS
    ========================================================================== */
 const projectData = {
+  mypocket: {
+    title: "My Pocket: Offline-First Personal Operating System",
+    client: "Independent Product (Google Play Store Release)",
+    badge: "Google Play Store • Launching Soon",
+    overview: "My Pocket is an offline-first, local-first personal operating system and financial intelligence application built with Flutter and Drift SQLite. Designed with zero-cloud dependency for absolute user privacy, it unifies Money Hub, Life Engine, Contextual Life Timeline, 30-Day Cash Flow forecasting, and Asset Vault into one connected context.",
+    responsibilities: [
+      "Engineered an offline-first, local SQLite ORM architecture using Drift (Schema V11) with atomic database transactions and encrypted local backups.",
+      "Architected reactive state management across 15+ complex screens using Riverpod 2.0 (Notifier, AsyncNotifier, family providers).",
+      "Built the Money Hub featuring real-time multi-account tracking, inter-account balance transfers, color-coded warning budget thresholds, and 30-day cash flow predictive forecasting.",
+      "Developed Life Engine modules: Project workspaces with budget health states (On Track, At Risk, Over Budget), Asset Vault with warranty expiration tracking, and Document Vault.",
+      "Integrated OCR Receipt Scanner and natural language text parser for intelligent expense capture with mandatory user confirmation previews.",
+      "Engineered data export/import pipelines (JSON and CSV) and biometric security (Fingerprint / Face ID lock) to ensure total data sovereignty."
+    ],
+    techStack: ["Flutter 3.3+", "Dart", "Drift (SQLite ORM)", "Riverpod 2.0", "fl_chart", "GoRouter", "OCR Receipt Scanner", "Biometrics", "Android / Play Store"],
+    architecture: "Local-first layered clean architecture where UI widgets listen to Riverpod state providers, delegating persistence to Drift SQLite DAOs running in a dedicated background isolate. Zero third-party cloud tracking, 100% on-device execution.",
+    gallery: [
+      "./assets/images/my_pocket/feature_graphic.jpg",
+      "./assets/images/my_pocket/screenshot_home.jpg",
+      "./assets/images/my_pocket/screenshot_analytics.jpg"
+    ]
+  },
   boxarr: {
     title: "BOXARR Digital Twin Platform & SPA Architecture",
     client: "Boxarr Ltd, United Kingdom (Sep 2022 – Present)",
@@ -279,18 +391,19 @@ const projectData = {
     architecture: "Multi-layered micro-frontend & modular architecture utilizing reactive state management (RxJS) with custom virtualization layers to render massive connected node topologies with zero UI stutter."
   },
   expressbase: {
-    title: "Expressbase RAD & Dynamic API Engine",
+    title: "Expressbase RAD: Open Source Low-Code & API Engine",
     client: "Expressbase Systems, Kochi (Oct 2016 – Jan 2021)",
-    badge: "Multi-Tenant Cloud SaaS",
-    overview: "Expressbase is a multi-database, multi-tenant cloud platform engineered to build and run mission-critical enterprise applications 10x faster using visual configuration, automated workflows, and dynamic APIs.",
+    badge: "Open Source (GPL v3) • GitHub",
+    githubUrl: "https://github.com/expressbasesystems",
+    overview: "Expressbase is an open-source rapid application development (RAD) platform engineered on .NET Core and PostgreSQL to build enterprise applications 10x faster. The entire platform is open source under GPL v3 with public repositories on GitHub (github.com/expressbasesystems), allowing full public code inspection of its dynamic query engine and reporting pipelines.",
     responsibilities: [
       "Architected and developed the Dynamic API Builder and execution engine on .NET Core, enabling non-technical users to build custom endpoints with dynamic parameter mapping and validation.",
-      "Engineered a visual, data-driven Drag-and-Drop PDF Builder (modeled after SAP Crystal Reports) enabling live canvas design and high-throughput server-side PDF generation.",
+      "Engineered a visual, data-driven Drag-and-Drop PDF Builder (modeled after SAP Crystal Reports) enabling live canvas design and high-throughput server-side PDF generation via iTextSharp.",
       "Built multi-database abstraction layer supporting PostgreSQL and MySQL with multi-tenant tenancy isolation.",
-      "Created dozens of reusable JavaScript plugins and custom UI extensions for the rapid app development suite."
+      "Authored extensive open-source C# service modules, ServiceStack plugins, and custom JavaScript frontend components."
     ],
-    techStack: [".NET Core", "C#", "PostgreSQL", "JavaScript", "Dynamic API Engine", "Server-Side PDF Generator", "SaaS Multi-tenancy"],
-    architecture: "Config-driven execution pipeline where JSON configuration trees parse runtime queries, enforce role-based security filters, and pipe streaming data into high-fidelity PDF renderers or REST endpoints."
+    techStack: [".NET Core", "C#", "ServiceStack.NET", "PostgreSQL", "JavaScript", "Dynamic API Engine", "Open Source (GPL v3)", "GitHub"],
+    architecture: "Open-source config-driven execution pipeline where JSON configuration trees parse runtime queries, enforce role-based security filters, and pipe streaming data into high-fidelity PDF renderers or REST endpoints. All code is publicly auditable on GitHub."
   },
   rmad: {
     title: "RMad: Cross-Platform Native Mobile App Generator",
@@ -362,6 +475,47 @@ function initProjectModals() {
         techWrap.appendChild(span);
       });
 
+      // Check for gallery screenshots (e.g. My Pocket)
+      let galleryWrap = document.getElementById('modal-project-gallery');
+      if (data.gallery && data.gallery.length > 0) {
+        if (!galleryWrap) {
+          galleryWrap = document.createElement('div');
+          galleryWrap.id = 'modal-project-gallery';
+          galleryWrap.className = 'modal-gallery-grid';
+          const archBlock = document.getElementById('modal-project-arch');
+          archBlock.parentNode.insertBefore(galleryWrap, archBlock);
+        }
+        galleryWrap.innerHTML = `
+          <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); margin-bottom: 10px; width: 100%;">Application Visuals & Screens</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            ${data.gallery.map(img => `<img src="${img}" alt="App Preview" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-medium); object-fit: cover; max-height: 320px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">`).join('')}
+          </div>
+        `;
+        galleryWrap.style.display = 'block';
+      } else if (galleryWrap) {
+        galleryWrap.style.display = 'none';
+      }
+
+      // Check for action buttons (GitHub repo link)
+      let actionsWrap = document.getElementById('modal-project-custom-actions');
+      if (data.githubUrl) {
+        if (!actionsWrap) {
+          actionsWrap = document.createElement('div');
+          actionsWrap.id = 'modal-project-custom-actions';
+          actionsWrap.style.cssText = 'margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-subtle); display: flex; gap: 12px; flex-wrap: wrap;';
+          document.querySelector('#project-modal .modal-content').appendChild(actionsWrap);
+        }
+        actionsWrap.innerHTML = `
+          <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View Open Source Repositories on GitHub ↗
+          </a>
+        `;
+        actionsWrap.style.display = 'flex';
+      } else if (actionsWrap) {
+        actionsWrap.style.display = 'none';
+      }
+
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     };
@@ -403,6 +557,7 @@ function initResumeModal() {
 
   const openResume = (e) => {
     if (e) e.preventDefault();
+    if (window.closeMobileNav) window.closeMobileNav();
     resumeModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   };

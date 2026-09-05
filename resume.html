@@ -237,6 +237,91 @@
       color: var(--text-muted);
     }
 
+    /* Responsive Mobile Styles */
+    @media (max-width: 768px) {
+      body {
+        padding: 16px 12px;
+      }
+      .action-bar {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .action-bar .btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+      .resume-container {
+        padding: 28px 20px;
+        border-radius: 10px;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding-bottom: 20px;
+      }
+      .name {
+        font-size: 1.85rem;
+      }
+      .contact-info {
+        text-align: left;
+        font-size: 0.85rem;
+        word-break: break-all;
+      }
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .skills-table,
+      .skills-table tbody,
+      .skills-table tr,
+      .skills-table td {
+        display: block;
+        width: 100%;
+      }
+      .skills-table td {
+        padding: 4px 0;
+        border: none;
+      }
+      .skills-category {
+        width: 100%;
+        color: var(--secondary);
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+      .skills-list {
+        margin-bottom: 8px;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 8px;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .action-bar {
+        flex-direction: column;
+      }
+      .action-bar .btn {
+        width: 100%;
+      }
+      .resume-container {
+        padding: 20px 14px;
+      }
+      .name {
+        font-size: 1.6rem;
+      }
+      .headline {
+        font-size: 1rem;
+      }
+      .job-bullets li {
+        font-size: 0.88rem;
+      }
+    }
+
     /* Print Specific Styles */
     @media print {
       body {
@@ -350,14 +435,56 @@
           <div class="job-date">Oct 2016 – Jan 2021 (4 yrs 4 mos)</div>
         </div>
         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
-          Contributed to <em>Expressbase RAD</em>, a multi-database, multi-tenant cloud SaaS platform designed to build and execute enterprise business applications 10x faster.
+          Contributed to <em>Expressbase RAD</em>, a multi-database, multi-tenant cloud SaaS platform designed to build and execute enterprise business applications 10x faster. <strong>The platform is open source under GPL v3 with public repositories on GitHub (<a href="https://github.com/expressbasesystems" target="_blank" style="color: var(--secondary); text-decoration: underline;">github.com/expressbasesystems</a>).</strong>
         </p>
         <ul class="job-bullets">
-          <li>Designed and developed a Data-Driven Drag-and-Drop PDF Builder (inspired by SAP Crystal Reports) with server-side document rendering.</li>
-          <li>Architected and implemented the Dynamic API Builder and runtime API Execution engine using .NET Core.</li>
+          <li>Architected and implemented the Dynamic API Builder and runtime API Execution engine using .NET Core and ServiceStack.</li>
+          <li>Designed and developed a Data-Driven Drag-and-Drop PDF Builder (inspired by SAP Crystal Reports) with server-side document rendering using iTextSharp.</li>
           <li>Engineered <strong>RMad</strong> (Rapid Mobile Application Development), a cross-platform native mobile platform using Xamarin where visual page schemas dynamically generate native views.</li>
           <li>Built hybrid mobile applications with Cordova and Onsen-UI using JavaScript.</li>
+          <li>Authored open-source modules and dynamic query execution pipelines accessible publicly on GitHub for community inspection and audit.</li>
           <li>Participated in pre-sales activities, client demonstrations, and rapid technical prototyping.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Independent Products & Open Source -->
+    <section class="section">
+      <h2 class="section-title">Independent Products & Open Source</h2>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">My Pocket</span> • 
+            <span class="job-company">Offline-First Personal Operating System & Financial Intelligence</span>
+          </div>
+          <div class="job-date">Independent Product • Google Play Store (Launching Soon)</div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
+          Architected and developed a full-scale local-first personal OS and financial hub using Flutter and Drift SQLite. Designed with 100% zero-cloud dependency for absolute user privacy and offline autonomy.
+        </p>
+        <ul class="job-bullets">
+          <li><strong>Architecture & Local Storage:</strong> Implemented reactive local SQLite database using Drift (Schema V11) with atomic isolate transactions and JSON/CSV backup pipelines.</li>
+          <li><strong>State Management:</strong> Built modular state layer across 15+ screens leveraging Riverpod 2.0 (Notifier, AsyncNotifier, family providers).</li>
+          <li><strong>Feature Engines:</strong> Engineered Money Hub (multi-account tracking, balance transfers, 30-day predictive cash flow), Life Engine (projects with budget health statuses, asset & warranty tracking), and Contextual Life Timeline.</li>
+          <li><strong>Smart Ingestion & Security:</strong> Built OCR receipt scanner and natural language parser for automatic expense logging with user confirmation previews; integrated biometric security (Fingerprint / Face ID).</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Expressbase Systems (Open Source Contributions)</span> • 
+            <span class="job-company"><a href="https://github.com/expressbasesystems" target="_blank" style="color: var(--secondary); text-decoration: underline;">github.com/expressbasesystems</a></span>
+          </div>
+          <div class="job-date">GPL v3 License • Public Repositories</div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
+          Full-stack contributions to the open-source low-code platform and execution engine. All source repositories are public and auditable on GitHub.
+        </p>
+        <ul class="job-bullets">
+          <li>Authored C# backend microservices, ServiceStack plugins, and custom JavaScript frontend components.</li>
+          <li>Built dynamic query parsers, PDF templating, and multi-tenant schema isolation layers.</li>
         </ul>
       </div>
     </section>
@@ -372,19 +499,19 @@
         </tr>
         <tr>
           <td class="skills-category">Backend & APIs</td>
-          <td class="skills-list">.NET Core, C#, Python, FastAPI, Django, Node.js, PHP, RESTful APIs, Dynamic API Execution Engines</td>
+          <td class="skills-list">.NET Core, C#, Python, FastAPI, Django, Node.js, PHP, RESTful APIs, Dynamic API Execution Engines, ServiceStack</td>
         </tr>
         <tr>
           <td class="skills-category">Mobile Engineering</td>
-          <td class="skills-list">Xamarin (Cross-Platform Native), Cordova, Ionic, Onsen-UI (Hybrid Mobile)</td>
+          <td class="skills-list">Flutter (Dart), Drift (SQLite ORM), Riverpod 2.0, Xamarin (Cross-Platform Native), Cordova, Ionic, Onsen-UI, Google Play Console</td>
         </tr>
         <tr>
           <td class="skills-category">Databases & DevOps</td>
-          <td class="skills-list">PostgreSQL, MySQL, Docker, Microservices, Signalwire Relay, Git (GitHub, GitLab, BitBucket), Jira</td>
+          <td class="skills-list">PostgreSQL, MySQL, SQLite (Drift ORM with Schema Migration), Docker, Microservices, Signalwire Relay, Git (GitHub, GitLab, BitBucket), Jira</td>
         </tr>
         <tr>
           <td class="skills-category">Architecture</td>
-          <td class="skills-list">Digital Twin Systems, Multi-Tenant Cloud SaaS, Low-Code / RAD Platforms, Onsite-Offshore Delivery</td>
+          <td class="skills-list">Offline-First / Local-First Systems, Digital Twin Systems, Multi-Tenant Cloud SaaS, Low-Code / RAD Platforms, Onsite-Offshore Delivery</td>
         </tr>
       </table>
     </section>
