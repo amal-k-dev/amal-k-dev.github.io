@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amal K Dev - Curriculum Vitae | Senior Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #0369a1;
+      --accent: #0284c7;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: #f1f5f9;
+      color: var(--text);
+      line-height: 1.55;
+      padding: 30px 16px;
+    }
+
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--secondary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(3, 105, 161, 0.25);
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #075985;
+    }
+
+    .btn-back {
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .btn-back:hover {
+      background: #f8fafc;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 48px 56px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .headline {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-top: 4px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .contact-info a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-text {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    /* Experience */
+    .job-item {
+      margin-bottom: 20px;
+    }
+
+    .job-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .job-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .job-bullets {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .job-bullets li {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.55;
+    }
+
+    /* Skills Grid */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .skills-table td {
+      padding: 8px 12px 8px 0;
+      vertical-align: top;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .skills-category {
+      font-weight: 700;
+      color: var(--primary);
+      width: 28%;
+    }
+
+    .skills-list {
+      color: #334155;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .edu-school {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Print Specific Styles */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .action-bar {
+        display: none;
+      }
+      .resume-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .job-item {
+        page-break-inside: avoid;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar">
+    <a href="./index.html" class="btn btn-back">← Back to Portfolio</a>
+    <button onclick="window.print()" class="btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <main class="resume-container">
+    <!-- Header -->
+    <header class="header">
+      <div>
+        <h1 class="name">AMAL K DEV</h1>
+        <div class="headline">Senior Software Engineer & Full-Stack Architect</div>
+      </div>
+      <div class="contact-info">
+        <div>Email: <a href="mailto:amalkdevs1355@gmail.com">amalkdevs1355@gmail.com</a></div>
+        <div>Phone: +91 9747063404</div>
+        <div>LinkedIn: <a href="https://www.linkedin.com/in/amal-k-dev-535792135" target="_blank">linkedin.com/in/amal-k-dev-535792135</a></div>
+        <div>Location: Kerala, India (Remote / Onsite-Offshore)</div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Senior Software Engineer with <strong>10+ years of comprehensive software development experience</strong> across the entire SDLC. Currently serving as <strong>Senior Software Engineer at Boxarr Ltd, UK</strong> (4+ years ongoing), architecting high-performance Single Page Applications (SPAs) and component systems for enterprise Digital Twins. Extensive background spanning Angular (5+ years), React, Python (FastAPI, Django), .NET Core, C#, Docker containerization, cross-platform mobile development (Xamarin, Cordova), and relational database optimization. Experienced in onsite-offshore delivery models, agile practices, pre-sales technical presentations, and rapid prototyping.
+      </p>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <!-- Job 1 -->
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Senior Software Engineer</span> • 
+            <span class="job-company">Boxarr Ltd, United Kingdom (Contract)</span>
+          </div>
+          <div class="job-date">Sep 2022 – Present (4+ Yrs)</div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
+          BOXARR is an enterprise modeling platform built on the boxes-and-arrows paradigm, mapping complex business processes, dependencies, resources, and roles into a coherent Digital Twin of the organization.
+        </p>
+        <ul class="job-bullets">
+          <li>Architect and develop high-performance Single Page Applications (SPAs) using Angular and React.</li>
+          <li>Enforce modular architecture and maintain reusable enterprise component libraries, boosting feature delivery speed.</li>
+          <li>Lead UI/UX enhancements and ensure continuous compatibility with modern Angular releases.</li>
+          <li>Collaborate effectively within a 12-person distributed engineering team in an agile remote environment.</li>
+        </ul>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Senior Software Engineer / Full Stack Developer</span> • 
+            <span class="job-company">Sathwic Consulting, Kochi</span>
+          </div>
+          <div class="job-date">Jan 2021 – Sep 2022 (1 yr 9 mos)</div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
+          Developed enterprise solutions including <em>Instio</em> (integrated digital hospitality platform for mobile check-in, guest management, and service quality monitoring) and <em>Workhorse</em>.
+        </p>
+        <ul class="job-bullets">
+          <li>Migrated legacy monolithic applications into decoupled microservices containerized with Docker.</li>
+          <li>Integrated third-party telecommunication services via Signalwire Relay API for real-time automated voice and SMS.</li>
+          <li>Developed high-concurrency reverse proxy solutions using Node.js for authentication and load distribution.</li>
+          <li>Engineered custom Django libraries, backend modules, and PostgreSQL query optimizations to cut latency.</li>
+          <li>Designed security models and managed end-to-end SDLC phases from modeling to deployment.</li>
+        </ul>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Full Stack Developer</span> • 
+            <span class="job-company">Expressbase Systems, Kochi</span>
+          </div>
+          <div class="job-date">Oct 2016 – Jan 2021 (4 yrs 4 mos)</div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
+          Contributed to <em>Expressbase RAD</em>, a multi-database, multi-tenant cloud SaaS platform designed to build and execute enterprise business applications 10x faster.
+        </p>
+        <ul class="job-bullets">
+          <li>Designed and developed a Data-Driven Drag-and-Drop PDF Builder (inspired by SAP Crystal Reports) with server-side document rendering.</li>
+          <li>Architected and implemented the Dynamic API Builder and runtime API Execution engine using .NET Core.</li>
+          <li>Engineered <strong>RMad</strong> (Rapid Mobile Application Development), a cross-platform native mobile platform using Xamarin where visual page schemas dynamically generate native views.</li>
+          <li>Built hybrid mobile applications with Cordova and Onsen-UI using JavaScript.</li>
+          <li>Participated in pre-sales activities, client demonstrations, and rapid technical prototyping.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <table class="skills-table">
+        <tr>
+          <td class="skills-category">Web & SPAs</td>
+          <td class="skills-list">Angular (5+ yrs, AngularJS, modern v14-v18+), React, TypeScript, JavaScript (ES6+), HTML5, CSS3, jQuery</td>
+        </tr>
+        <tr>
+          <td class="skills-category">Backend & APIs</td>
+          <td class="skills-list">.NET Core, C#, Python, FastAPI, Django, Node.js, PHP, RESTful APIs, Dynamic API Execution Engines</td>
+        </tr>
+        <tr>
+          <td class="skills-category">Mobile Engineering</td>
+          <td class="skills-list">Xamarin (Cross-Platform Native), Cordova, Ionic, Onsen-UI (Hybrid Mobile)</td>
+        </tr>
+        <tr>
+          <td class="skills-category">Databases & DevOps</td>
+          <td class="skills-list">PostgreSQL, MySQL, Docker, Microservices, Signalwire Relay, Git (GitHub, GitLab, BitBucket), Jira</td>
+        </tr>
+        <tr>
+          <td class="skills-category">Architecture</td>
+          <td class="skills-list">Digital Twin Systems, Multi-Tenant Cloud SaaS, Low-Code / RAD Platforms, Onsite-Offshore Delivery</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="edu-degree">Master of Computer Application (MCA) — 2016</div>
+        <div class="edu-school">Union Christian College, Aluva • Affiliated to Mahatma Gandhi University, Kottayam, Kerala</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Science in Physics (B.Sc.) — 2013</div>
+        <div class="edu-school">Sree Sankara Vidhyapeetom College, Perumbavoor • Affiliated to Mahatma Gandhi University, Kerala</div>
+      </div>
+    </section>
+
+    <!-- Personal & Languages -->
+    <section class="section">
+      <h2 class="section-title">Languages & Details</h2>
+      <p class="summary-text">
+        <strong>Languages:</strong> English (Fluent), Hindi, Malayalam (Native), Tamil (Spoken)<br>
+        <strong>Engagement:</strong> Full-time / Contract Senior Software Engineer & Technical Architect
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>

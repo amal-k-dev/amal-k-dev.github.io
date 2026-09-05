@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amal K Dev | Senior Software Engineer & Full-Stack Architect</title>
+  <meta name="description" content="Portfolio of Amal K Dev, Senior Software Engineer with 10+ years experience specializing in Angular, React, Python, .NET Core, Enterprise Digital Twins, and Cloud Microservices. Currently at Boxarr Ltd, UK.">
+  <meta name="keywords" content="Amal K Dev, Senior Software Engineer, Full Stack Developer, Angular Developer, Boxarr UK, Python, FastAPI, Django, .NET Core, Xamarin, Digital Twin, Portfolio">
+  <meta name="author" content="Amal K Dev">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Amal K Dev | Senior Software Engineer & Full-Stack Architect">
+  <meta property="og:description" content="10+ years engineering high-performance SPAs, Digital Twins, and scalable enterprise platforms. Explore projects, architecture, and experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amalkdev.github.io/">
+  <meta property="og:image" content="./assets/images/avatar.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2306b6d4'/><text x='50%' y='62%' text-anchor='middle' font-family='sans-serif' font-size='48' font-weight='bold' fill='%23ffffff'>AD</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Interactive Digital Twin Canvas Background -->
+  <canvas id="network-canvas"></canvas>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#about" class="nav-brand">
+        <div class="brand-badge">AD</div>
+        <span>Amal K Dev</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm open-resume-btn" id="nav-resume-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          View CV
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section id="about" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-pulse"></span>
+            <span class="status-text">Senior Software Engineer @ Boxarr Ltd (UK) • 4+ Yrs</span>
+          </div>
+
+          <h1 class="hero-title">
+            Architecting <span class="gradient-text">Scalable SPAs</span> & Enterprise Digital Systems
+          </h1>
+
+          <div class="hero-typing-wrap">
+            <span>&gt;&nbsp;</span>
+            <span id="hero-typing"></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-desc">
+            Senior Software Engineer and Full-Stack Architect with <strong>10+ years of proven engineering impact</strong>. Currently driving high-performance Angular & React SPAs for <strong>Boxarr Ltd, UK</strong>'s enterprise Digital Twin platform. Specialized in modular frontends, high-throughput Python/.NET APIs, containerized microservices, and cross-platform mobile engines.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Explore Enterprise Projects
+            </a>
+            <button class="btn btn-secondary open-resume-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download CV (Resume)
+            </button>
+          </div>
+
+          <!-- Quick Interactive Contact Chips -->
+          <div class="contact-chips">
+            <div class="contact-chip" data-copy-text="amalkdevs1355@gmail.com" data-copy-label="Email Copied">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>amalkdevs1355@gmail.com</span>
+              <span class="chip-copy-icon">📋</span>
+            </div>
+
+            <div class="contact-chip" data-copy-text="+919747063404" data-copy-label="Phone Copied">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91 9747063404</span>
+              <span class="chip-copy-icon">📋</span>
+            </div>
+
+            <a href="https://www.linkedin.com/in/amal-k-dev-535792135" target="_blank" rel="noopener noreferrer" class="contact-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn Profile ↗</span>
+            </a>
+
+            <div class="contact-chip" style="cursor: default;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Kerala, India (Global Remote / Onsite)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual / Avatar with Floating Badges -->
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-inner">
+              <img src="./assets/images/avatar.jpg" alt="Amal K Dev - Senior Software Engineer" class="avatar-img">
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-chip floating-chip-1">
+              <div class="chip-icon angular">▲</div>
+              <div class="chip-content">
+                <span class="chip-title">Angular & React</span>
+                <span class="chip-subtitle">5+ Yrs Enterprise SPAs</span>
+              </div>
+            </div>
+
+            <div class="floating-chip floating-chip-2">
+              <div class="chip-icon dotnet">⚙</div>
+              <div class="chip-content">
+                <span class="chip-title">Python & .NET Core</span>
+                <span class="chip-subtitle">FastAPI, Django, C#</span>
+              </div>
+            </div>
+
+            <div class="floating-chip floating-chip-3">
+              <div class="chip-icon digitaltwin">◈</div>
+              <div class="chip-content">
+                <span class="chip-title">Digital Twin Systems</span>
+                <span class="chip-subtitle">Boxarr UK (4+ Yrs)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       KEY STATS & METRICS
+       ======================================================================== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Years Experience</span>
+          <span class="stat-sublabel">Full SDLC (2016 – Present)</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">4+</span>
+          <span class="stat-label">Years at Boxarr UK</span>
+          <span class="stat-sublabel">Enterprise Digital Twin</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Core Enterprise SaaS</span>
+          <span class="stat-sublabel">RAD, Instio & Boxarr</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">Full-Stack</span>
+          <span class="stat-label">Web, Mobile & Cloud</span>
+          <span class="stat-sublabel">Angular, Python, .NET, Docker</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CAREER EXPERIENCE TIMELINE
+       ======================================================================== -->
+  <section id="experience" class="experience-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Career Milestones
+        </div>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">
+          Over a decade of progressive engineering leadership, architecting mission-critical platforms across the UK, India, and global clients.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <!-- Item 1: Boxarr -->
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-marker-inner"></div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">
+                  Senior Software Engineer
+                  <span class="timeline-badge badge-current">Current Role (4+ Years)</span>
+                </h3>
+                <div class="timeline-company">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  Boxarr Ltd, United Kingdom (Contract)
+                </div>
+              </div>
+              <div class="timeline-tenure">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Sep 2022 – Present (4+ Yrs)
+              </div>
+            </div>
+
+            <p class="timeline-summary">
+              BOXARR is a cutting-edge enterprise modeling engine built on the boxes-and-arrows paradigm, enabling global corporations to map, analyze, and optimize business processes, roles, and supply chains into a unified <strong>Digital Twin of their Organization</strong>.
+            </p>
+
+            <ul class="timeline-bullets">
+              <li>Lead frontend engineering and UI/UX design for complex, high-performance Single Page Applications (SPAs) handling massive graph structures.</li>
+              <li>Architected modular frontend libraries and reusable UI component suites across Angular and React, cutting component development overhead.</li>
+              <li>Continuously upgrade and maintain codebases with latest Angular versions, establishing best-practice reactive patterns (RxJS, Signals).</li>
+              <li>Collaborate closely with distributed UK & international engineering teams (12 engineers) under agile Onsite-Offshore delivery models.</li>
+            </ul>
+
+            <div class="tech-tag-group">
+              <span class="tech-tag">Angular 14-18+</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">SPAs</span>
+              <span class="tech-tag">Modular Architecture</span>
+              <span class="tech-tag">Digital Twin Modeling</span>
+              <span class="tech-tag">GitLab</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Sathwic Consulting -->
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-marker-inner"></div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">Senior Software Engineer & Full Stack Developer</h3>
+                <div class="timeline-company">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  Sathwic Consulting, Kochi
+                </div>
+              </div>
+              <div class="timeline-tenure">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Jan 2021 – Sep 2022 (1 yr 9 mos)
+              </div>
+            </div>
+
+            <p class="timeline-summary">
+              Delivered enterprise hospitality and workflow solutions including <strong>Instio</strong> (integrated digital platform for mobile check-in, guest management, and service quality monitoring) and <strong>Workhorse</strong>.
+            </p>
+
+            <ul class="timeline-bullets">
+              <li>Re-engineered monolithic application backends into decoupled, highly scalable Dockerized microservices.</li>
+              <li>Integrated third-party telecommunications and messaging via Signalwire Relay API for automated guest contact.</li>
+              <li>Constructed high-speed reverse proxy layers using Node.js for traffic routing, rate limiting, and auth token validation.</li>
+              <li>Developed custom Django modules and database query optimizations in PostgreSQL to drastically reduce API latency.</li>
+              <li>Full SDLC leadership: requirements gathering, threat modeling, architecture design, and deployment management.</li>
+            </ul>
+
+            <div class="tech-tag-group">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Angular & AngularJS</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Signalwire Relay</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Expressbase Systems -->
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-marker-inner"></div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">Full Stack Developer</h3>
+                <div class="timeline-company">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  Expressbase Systems, Kochi
+                </div>
+              </div>
+              <div class="timeline-tenure">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Oct 2016 – Jan 2021 (4 yrs 4 mos)
+              </div>
+            </div>
+
+            <p class="timeline-summary">
+              Key contributor to <strong>Expressbase RAD</strong>, a multi-database, multi-tenant cloud SaaS platform designed to build enterprise business applications 10x faster with drag-and-drop form builders, dynamic reporting, chatbots, and APIs.
+            </p>
+
+            <ul class="timeline-bullets">
+              <li>Designed and built a visual, data-driven drag-and-drop PDF Builder (comparable to SAP Crystal Reports) that generates server-side PDFs from live dynamic database records.</li>
+              <li>Architected and implemented the Dynamic API Builder and execution engine on .NET Core.</li>
+              <li>Engineered <strong>RMad</strong> (Rapid Mobile Application Development), a cross-platform native mobile generator using Xamarin that dynamically maps JSON page configs into native Android/iOS views.</li>
+              <li>Developed hybrid mobile applications in Cordova and Onsen-UI using JavaScript.</li>
+              <li>Participated in pre-sales, customer presentations, and prototype discovery workshops.</li>
+            </ul>
+
+            <div class="tech-tag-group">
+              <span class="tech-tag">.NET Core</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">Xamarin</span>
+              <span class="tech-tag">JavaScript / jQuery</span>
+              <span class="tech-tag">Cordova & Onsen-UI</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">SaaS Multi-tenancy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FEATURED PROJECTS & ARCHITECTURE SHOWCASE
+       ======================================================================== -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          Architecture & Engineering
+        </div>
+        <h2 class="section-title">Flagship Platforms</h2>
+        <p class="section-subtitle">
+          Core enterprise systems I've designed and delivered—from digital twins to rapid application builders and native cross-platform engines.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Boxarr Digital Twin -->
+        <div class="project-card" data-project-id="boxarr">
+          <div class="project-preview">
+            <img src="./assets/images/digital_twin.jpg" alt="BOXARR Digital Twin Platform" class="project-img">
+            <div class="project-overlay"></div>
+            <div class="project-category-tag">Enterprise SPA & Digital Twin</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">BOXARR: Digital Twin Modeling Engine</h3>
+            <div class="project-client">Boxarr Ltd, United Kingdom</div>
+            <p class="project-desc">
+              Contextual graph modeling tool based on the boxes-and-arrows paradigm, mapping complex enterprise operations, dependencies, and resources into an interactive digital twin.
+            </p>
+            <ul class="project-highlights">
+              <li>High-performance SPAs in Angular & React with sub-second rendering.</li>
+              <li>Reusable enterprise component library architecture.</li>
+              <li>Maintained continuous support across modern Angular versions.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="tech-tag-group">
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+              </div>
+              <button class="btn btn-secondary btn-sm view-project-btn">Case Study ↗</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Expressbase RAD & API Builder -->
+        <div class="project-card" data-project-id="expressbase">
+          <div class="project-preview">
+            <img src="./assets/images/rad_builder.jpg" alt="Expressbase RAD & Dynamic API Builder" class="project-img">
+            <div class="project-overlay"></div>
+            <div class="project-category-tag">Cloud SaaS & Low-Code Platform</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Expressbase RAD & Dynamic API Builder</h3>
+            <div class="project-client">Expressbase Systems, Kochi</div>
+            <p class="project-desc">
+              Multi-tenant, multi-database cloud SaaS platform for building enterprise applications 10x faster with drag-and-drop report builders and dynamic API engines.
+            </p>
+            <ul class="project-highlights">
+              <li>Data-driven drag-and-drop PDF report builder (SAP Crystal Reports paradigm).</li>
+              <li>Dynamic API Builder & runtime execution engine on .NET Core.</li>
+              <li>Enterprise multi-tenancy & custom JavaScript plugin ecosystem.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="tech-tag-group">
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+              <button class="btn btn-secondary btn-sm view-project-btn">Case Study ↗</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: RMad Mobile Engine -->
+        <div class="project-card" data-project-id="rmad">
+          <div class="project-preview">
+            <div style="width:100%; height:100%; background: linear-gradient(135deg, #0c182e, #1a103c); display:flex; align-items:center; justify-content:center;">
+              <div style="font-size:3.5rem; color: #8b5cf6;">📱</div>
+            </div>
+            <div class="project-overlay"></div>
+            <div class="project-category-tag">Cross-Platform Native & Hybrid Mobile</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">RMad: Cross-Platform Mobile Engine</h3>
+            <div class="project-client">Expressbase Systems</div>
+            <p class="project-desc">
+              Cross-platform native mobile application generator built with Xamarin that transforms visual drag-and-drop page configurations into native Android and iOS views dynamically.
+            </p>
+            <ul class="project-highlights">
+              <li>Dynamic native view generator from JSON configuration trees.</li>
+              <li>Hybrid mobile application development using Cordova and Onsen-UI.</li>
+              <li>Offline data synchronization and hardware device API bridging.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="tech-tag-group">
+                <span class="tech-tag">Xamarin</span>
+                <span class="tech-tag">Cordova</span>
+                <span class="tech-tag">Onsen-UI</span>
+              </div>
+              <button class="btn btn-secondary btn-sm view-project-btn">Case Study ↗</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Instio & Telephony Microservices -->
+        <div class="project-card" data-project-id="instio">
+          <div class="project-preview">
+            <div style="width:100%; height:100%; background: linear-gradient(135deg, #0f242b, #091a26); display:flex; align-items:center; justify-content:center;">
+              <div style="font-size:3.5rem; color: #06b6d4;">⚡</div>
+            </div>
+            <div class="project-overlay"></div>
+            <div class="project-category-tag">Microservices & Hospitality Telephony</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Instio Hospitality Suite & Microservices</h3>
+            <div class="project-client">Sathwic Consulting, Kochi</div>
+            <p class="project-desc">
+              Integrated digital solution for contactless mobile check-in, automated guest service management, and quality monitoring for luxury hotels and resorts.
+            </p>
+            <ul class="project-highlights">
+              <li>Monolith to Dockerized microservices migration.</li>
+              <li>Telephony integration via Signalwire Relay API for automated notifications.</li>
+              <li>High-concurrency reverse proxy written in Node.js.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="tech-tag-group">
+                <span class="tech-tag">Python / Django</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <button class="btn btn-secondary btn-sm view-project-btn">Case Study ↗</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       TECHNICAL SKILLS & CAPABILITIES MATRIX
+       ======================================================================== -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          Technical Repertoire
+        </div>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">
+          Demonstrated proficiency across front-end frameworks, backend APIs, mobile platforms, databases, and DevOps tooling.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">All Skills</button>
+        <button class="filter-btn" data-filter="frontend">Frontend & SPAs</button>
+        <button class="filter-btn" data-filter="backend">Backend & APIs</button>
+        <button class="filter-btn" data-filter="mobile">Mobile (Native & Hybrid)</button>
+        <button class="filter-btn" data-filter="database">Databases & DevOps</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #f43f5e;">▲</div>
+            <div>
+              <div class="skill-name">Angular & AngularJS</div>
+              <div class="skill-meta">5+ Years • Production Lead</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 95%;"></div>
+          </div>
+          <p class="skill-desc">
+            Deep mastery in modern Angular (v14–v18+) and legacy AngularJS. Enterprise SPAs, modular architecture, custom directives, RxJS, and dynamic components.
+          </p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #38bdf8;">⚛</div>
+            <div>
+              <div class="skill-name">React & TypeScript</div>
+              <div class="skill-meta">4+ Years • Enterprise Level</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 88%;"></div>
+          </div>
+          <p class="skill-desc">
+            Building component libraries, hooks, functional programming, strict type safety, state synchronization, and reactive graph interactions.
+          </p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="skill-card" data-category="backend">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #a78bfa;">⚙</div>
+            <div>
+              <div class="skill-name">.NET Core & C#</div>
+              <div class="skill-meta">6+ Years • Architecture</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 90%;"></div>
+          </div>
+          <p class="skill-desc">
+            High-throughput REST APIs, dynamic schema builders, dependency injection, server-side document rendering, and multi-tenant security layers.
+          </p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="skill-card" data-category="backend">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #34d399;">🐍</div>
+            <div>
+              <div class="skill-name">Python, FastAPI & Django</div>
+              <div class="skill-meta">5+ Years • Microservices</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 88%;"></div>
+          </div>
+          <p class="skill-desc">
+            Asynchronous APIs with FastAPI, custom reusable Django packages, background queue processing, and integration with third-party telecommunications.
+          </p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="skill-card" data-category="backend frontend">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #fbbf24;">JS</div>
+            <div>
+              <div class="skill-name">JavaScript, Node.js & PHP</div>
+              <div class="skill-meta">9+ Years • Core Platform</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 92%;"></div>
+          </div>
+          <p class="skill-desc">
+            Custom plugins, high-concurrency Node.js reverse proxies, npm tooling, DOM optimizations, and legacy PHP web development.
+          </p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="skill-card" data-category="mobile">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #818cf8;">📱</div>
+            <div>
+              <div class="skill-name">Xamarin (Cross-Platform)</div>
+              <div class="skill-meta">4+ Years • Native Engines</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 85%;"></div>
+          </div>
+          <p class="skill-desc">
+            Created RMad dynamic mobile framework where drag-and-drop page schemas render directly to native Android and iOS controls.
+          </p>
+        </div>
+
+        <!-- Skill 7 -->
+        <div class="skill-card" data-category="mobile">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #38bdf8;">📲</div>
+            <div>
+              <div class="skill-name">Cordova, Ionic & Onsen-UI</div>
+              <div class="skill-meta">4+ Years • Hybrid Apps</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 88%;"></div>
+          </div>
+          <p class="skill-desc">
+            Cross-platform web-wrapped hybrid mobile apps, responsive mobile styling, native device plug-in integrations, and touch gestures.
+          </p>
+        </div>
+
+        <!-- Skill 8 -->
+        <div class="skill-card" data-category="database">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #60a5fa;">🗄</div>
+            <div>
+              <div class="skill-name">PostgreSQL & MySQL</div>
+              <div class="skill-meta">8+ Years • Relational DBs</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 90%;"></div>
+          </div>
+          <p class="skill-desc">
+            Schema architecture, indexing strategies, complex query tuning, JSONB document querying, and multi-tenant data isolation.
+          </p>
+        </div>
+
+        <!-- Skill 9 -->
+        <div class="skill-card" data-category="database">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #38bdf8;">🐳</div>
+            <div>
+              <div class="skill-name">Docker & Microservices</div>
+              <div class="skill-meta">4+ Years • DevOps & SDLC</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 86%;"></div>
+          </div>
+          <p class="skill-desc">
+            Containerization of polyglot stacks, Docker Compose environments, microservice decoupling, Signalwire Relay webhooks, and deployment workflows.
+          </p>
+        </div>
+
+        <!-- Skill 10 -->
+        <div class="skill-card" data-category="database">
+          <div class="skill-header">
+            <div class="skill-icon-box" style="color: #f97316;">🛠</div>
+            <div>
+              <div class="skill-name">Git, Jira & SDLC Tools</div>
+              <div class="skill-meta">10+ Years • Agile Mastery</div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-fill" style="width: 95%;"></div>
+          </div>
+          <p class="skill-desc">
+            GitHub, GitLab, BitBucket, Jira project tracking, CI/CD pipelines, pre-sales prototyping, customer presentations, and code review mentorship.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       EDUCATION & BACKGROUND
+       ======================================================================== -->
+  <section id="education" class="education-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          Academic Foundation
+        </div>
+        <h2 class="section-title">Education & Credentials</h2>
+        <p class="section-subtitle">
+          Solid foundational qualifications in advanced computer applications and mathematical physics.
+        </p>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-column">
+          <!-- MCA -->
+          <div class="edu-card">
+            <h3 class="edu-degree">Master of Computer Application (MCA)</h3>
+            <div class="edu-college">Union Christian College, Aluva</div>
+            <div class="edu-details">
+              Affiliated with Mahatma Gandhi University, Kottayam, Kerala • Graduated 2016<br>
+              Specialized in Advanced Algorithms, Software Engineering, Object-Oriented Architecture, and Distributed Database Systems.
+            </div>
+          </div>
+
+          <!-- B.Sc. Physics -->
+          <div class="edu-card">
+            <h3 class="edu-degree">Bachelor of Science in Physics (B.Sc.)</h3>
+            <div class="edu-college">Sree Sankara Vidhyapeetom College, Perumbavoor</div>
+            <div class="edu-details">
+              Affiliated with Mahatma Gandhi University, Kerala • Graduated 2013<br>
+              Analytical mechanics, mathematical modeling, scientific computations, and problem-solving fundamentals.
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal / Languages / Work Model -->
+        <div class="personal-box">
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Professional Profile Details</h3>
+
+          <div class="personal-item">
+            <span class="personal-label">Languages Known</span>
+            <span class="personal-value">English (Fluent), Hindi, Malayalam (Native), Tamil (Spoken)</span>
+          </div>
+
+          <div class="personal-item">
+            <span class="personal-label">Current Work Model</span>
+            <span class="personal-value">Senior Software Engineer at Boxarr Ltd, UK (Contract / Remote)</span>
+          </div>
+
+          <div class="personal-item">
+            <span class="personal-label">Engineering Methodology</span>
+            <span class="personal-value">Agile / Scrum, Onsite-Offshore Collaboration, Clean Code, CI/CD</span>
+          </div>
+
+          <div class="personal-item">
+            <span class="personal-label">Open For</span>
+            <span class="personal-value">Senior / Lead Software Engineer & Architect Opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONTACT & CONNECT SECTION
+       ======================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <h2 class="contact-title">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
+            <p class="contact-subtitle">
+              Whether you are looking to architect a mission-critical enterprise SPA, migrate legacy systems to microservices, or explore technical leadership roles, feel free to reach out directly.
+            </p>
+
+            <div class="contact-details-list">
+              <div class="contact-detail-item">
+                <div class="contact-icon-circle">✉</div>
+                <div class="contact-detail-text">
+                  <h4>Direct Email</h4>
+                  <a href="mailto:amalkdevs1355@gmail.com">amalkdevs1355@gmail.com</a>
+                  <button class="btn btn-sm btn-secondary" style="margin-left: 10px; padding: 4px 10px;" data-copy-text="amalkdevs1355@gmail.com" data-copy-label="Email Copied">Copy</button>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-circle">📞</div>
+                <div class="contact-detail-text">
+                  <h4>Mobile Phone</h4>
+                  <a href="tel:+919747063404">+91 9747063404</a>
+                  <button class="btn btn-sm btn-secondary" style="margin-left: 10px; padding: 4px 10px;" data-copy-text="+919747063404" data-copy-label="Phone Copied">Copy</button>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-circle">💼</div>
+                <div class="contact-detail-text">
+                  <h4>LinkedIn</h4>
+                  <a href="https://www.linkedin.com/in/amal-k-dev-535792135" target="_blank" rel="noopener noreferrer">
+                    linkedin.com/in/amal-k-dev-535792135 ↗
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-circle">📍</div>
+                <div class="contact-detail-text">
+                  <h4>Location</h4>
+                  <span>Kerala, India (Global Remote & Onsite Collaboration)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Jane Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email Address *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="jane@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject / Purpose</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="Enterprise Project Collaboration / Opportunity">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message *</label>
+                <textarea id="contact-message" class="form-control" placeholder="Share your project requirements, technology stack, or inquiry..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        © 2026 <strong>Amal K Dev</strong>. Built for GitHub Pages.
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about" class="footer-link">About</a></li>
+        <li><a href="#experience" class="footer-link">Experience</a></li>
+        <li><a href="#projects" class="footer-link">Projects</a></li>
+        <li><a href="#skills" class="footer-link">Skills</a></li>
+        <li><a href="./resume.html" target="_blank" class="footer-link">Printable CV</a></li>
+        <li><a href="https://www.linkedin.com/in/amal-k-dev-535792135" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PROJECT DEEP-DIVE MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-content">
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
+          <span class="project-category-tag" id="modal-project-badge" style="position: static;">Badge</span>
+          <span style="font-size: 0.85rem; color: var(--text-dim);" id="modal-project-client">Client</span>
+        </div>
+        <h2 id="modal-project-title" style="font-size: 1.8rem; margin-bottom: 16px; color: #fff;">Project Title</h2>
+
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); margin-bottom: 8px;">Overview & Business Value</h4>
+        <p id="modal-project-overview" style="margin-bottom: 24px; font-size: 1rem; color: var(--text-secondary); line-height: 1.7;"></p>
+
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); margin-bottom: 8px;">Key Engineering Contributions</h4>
+        <ul id="modal-project-resp" style="list-style: square; padding-left: 20px; margin-bottom: 24px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px;"></ul>
+
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); margin-bottom: 8px;">Technical Architecture</h4>
+        <p id="modal-project-arch" style="margin-bottom: 24px; font-size: 0.95rem; color: var(--text-muted); background: rgba(255,255,255,0.03); padding: 16px; border-radius: 10px; border: 1px solid var(--border-subtle); line-height: 1.6;"></p>
+
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); margin-bottom: 8px;">Technologies Utilized</h4>
+        <div id="modal-project-tech" class="tech-tag-group"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       RESUME PREVIEW MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-container" style="max-width: 900px;">
+      <button class="modal-close-btn" id="resume-modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: #fff;">Amal K Dev — Curriculum Vitae</h2>
+            <p style="color: var(--cyan); font-weight: 600;">Senior Software Engineer • 10+ Years Experience</p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="./resume.html" target="_blank" class="btn btn-primary btn-sm">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              Print / Save as PDF
+            </a>
+          </div>
+        </div>
+
+        <div style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <h3 style="color: #fff; border-bottom: 1px solid var(--border-cyan); padding-bottom: 6px; margin-bottom: 10px;">Summary</h3>
+            <p>
+              Senior Software Engineer with 10+ years of comprehensive SDLC experience. 5+ years dedicated to enterprise Single Page Applications in Angular & React. Proven track record architecting Digital Twin platforms, multi-tenant cloud SaaS engines (.NET Core, C#), high-throughput asynchronous APIs (Python FastAPI, Django), and cross-platform mobile frameworks (Xamarin, Cordova). Extensive onsite-offshore collaboration experience with UK enterprise Boxarr Ltd.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="color: #fff; border-bottom: 1px solid var(--border-cyan); padding-bottom: 6px; margin-bottom: 10px;">Employment History</h3>
+            <div style="margin-bottom: 14px;">
+              <strong>Senior Software Engineer @ Boxarr Ltd, UK (Contract)</strong><br>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Sep 2022 – Present (4+ Years ongoing)</span>
+              <ul style="padding-left: 20px; margin-top: 6px;">
+                <li>Designed and developed high-performance SPAs in Angular & React for Boxarr's Digital Twin modeling engine.</li>
+                <li>Enforced modular architectures, reusable enterprise component libraries, and upgraded system to modern Angular releases.</li>
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <strong>Senior Software Engineer @ Sathwic Consulting, Kochi</strong><br>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Jan 2021 – Sep 2022 (1 yr 9 mos)</span>
+              <ul style="padding-left: 20px; margin-top: 6px;">
+                <li>Engineered Instio (hospitality guest check-in & monitoring) and Workhorse applications.</li>
+                <li>Monolith to microservices migration with Docker, Node.js proxy layers, and Signalwire Relay integrations.</li>
+              </ul>
+            </div>
+
+            <div>
+              <strong>Full Stack Developer @ Expressbase Systems, Kochi</strong><br>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">Oct 2016 – Jan 2021 (4 yrs 4 mos)</span>
+              <ul style="padding-left: 20px; margin-top: 6px;">
+                <li>Developed Expressbase RAD visual drag-and-drop PDF report builder (Crystal Reports paradigm) and Dynamic API builder on .NET Core.</li>
+                <li>Developed RMad cross-platform native mobile generator using Xamarin and hybrid mobile apps using Cordova/Onsen-UI.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="color: #fff; border-bottom: 1px solid var(--border-cyan); padding-bottom: 6px; margin-bottom: 10px;">Education</h3>
+            <p><strong>Master of Computer Application (MCA)</strong> — Union Christian College, Aluva (MG University) • 2016</p>
+            <p><strong>Bachelor of Science in Physics (B.Sc.)</strong> — Sree Sankara Vidhyapeetom College (MG University) • 2013</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Script -->
+  <script src="./app.js"></script>
+</body>
+</html>
